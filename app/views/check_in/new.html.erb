@@ -1,0 +1,17 @@
+<center><coolheader><%= @location.name %></coolheader>
+<br>
+<br>
+<br>
+
+<%= form_tag('/success') do %>
+ <h3> <div class="field">
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email %>
+  </div></h3><br>
+  <%= hidden_field_tag :location_id, @location.id %>
+  <%= hidden_field_tag :event_id, @location.event_id %>
+  <div class="actions">
+    <%= submit_tag "Check in" %>
+  </div>
+<% end %>
+</center>

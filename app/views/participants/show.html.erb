@@ -1,0 +1,41 @@
+<center></venter><p id="notice"><%= notice %></p>
+
+<coolheader>
+  <strong>Event:</strong>
+  <%= @participant.event_id %>
+</coolheader>
+<br>
+<br>
+
+<h3>
+  <strong>Email:</strong>
+  <%= @participant.email %>
+</h3>
+
+
+
+<table class="table1">
+  <thead>
+    <tr>
+      <th>Locations Left:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participant.locations.where(event_id: @participant.event_id).each do |l| %>
+      <% if ! @participant.visited_locations.include? l.id %>
+      <tr>
+        <td><%= l.name %></td>
+      </tr>
+    <% end %>
+  
+
+
+
+<% end %>
+</tbody>
+</table><br>
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', edit_event_path(@participant.event_id) %>
+</center>

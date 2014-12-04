@@ -1,0 +1,7 @@
+== README
+
+This is the app designed according to assignment 7 but continually updated after each class.
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

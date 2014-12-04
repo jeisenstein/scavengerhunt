@@ -1,0 +1,30 @@
+<center><p id="notice"><%= notice %></p>
+
+<h3>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</h3>
+<br>
+<table>
+<% @qr.modules.each_index do |x| %>
+  <tr>  
+  <% @qr.modules.each_index do |y| %>
+   <% if @qr.dark?(x,y) %>
+    <td class="black"/>
+   <% else %>
+    <td class="white"/>
+   <% end %>
+  <% end %>
+  </tr>
+<% end %>
+</table>
+<br>
+<h3>
+  <strong>Event:</strong>
+  <%= @location.event %>
+</h3>
+<br>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', event_path(@location.event_id) %>
+</center>
